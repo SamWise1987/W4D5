@@ -25,9 +25,17 @@ function collectFormData() {
     return arrayOfInputs;
 }
 
+function showValues(data){
+    const div = document.createElement("div");
+    div.textContent = data;
+    document.body.append(div);
+}
+
 const button = document.getElementById("submit");
 button.addEventListener("click", function(event){
     event.preventDefault();
+    const inputsValueArray = collectFormData();
+    inputsValueArray.map(data=> showValues(data));
 
 })
 
